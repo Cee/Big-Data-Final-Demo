@@ -88,8 +88,6 @@ Also, difficult to figure out **key attributes** strongly affecting the rating
 
 # Workflow
 
-<!-- ![](Workflow.jpg) -->
-
 ---
 
 ![](Workflow.jpg)
@@ -209,9 +207,11 @@ XGBoost | 0.408734 | 0.639323 | 0.100901 | 0.494821 | 0.159414
 
 ---
 
-# Find the Best Location For Opening
+# Find the Best Location For Opening[^1]
 
 - [Map](https://cee.github.io/Big-Data-Final-Demo/Graph/map.html)
+
+[^1]: Start a Chinese Restaurant within 100km of CMU
 
 ---
 
