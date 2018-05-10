@@ -32,7 +32,8 @@ slidenumbers: true
 - Hard to estimate w/o actual practice and testing
 - Time and money consuming
 - Risky for new openings
-- Also, difficult to figure out key attributes strongly affecting the rating
+
+Also, difficult to figure out **key attributes** strongly affecting the rating
 
 ^ Location is an important factor that directly affect the source of actual audience. But it has always been a difficult problem to estimate a certain consumer-facing business’ performance without actual practice and testing. Which, it is both time consuming and risky for business to seek for new openings locations.
 
@@ -42,15 +43,15 @@ slidenumbers: true
 
 - Suggest a potential opening in designated area
 - Estimate performance and rating based on the given location
-- Find out the most important factors combined with *machine learning*
+- Find out the most significant factors combined with *machine learning*
 
-^ By utilizing big data approach and machine learning, it is possible to estimate a business’ performance based on the given location, population demographic and nearby similar or supporting facilities. For instance, this product will enable corporate businesses finding new potential opening opportunities in designated area. 
+^ By utilizing big data approach and machine learning, it is possible to estimate a business’ performance based on the given location, population demographic and nearby similar or supporting facilities. For instance, our project will enable corporate businesses finding new potential opening opportunities in designated area. 
 
 ---
 
 # Target Audience?
 
-- Startup or individuals, the ones whom have little or no experience, that willing to take less risks 
+- Startup or individuals, the ones whom have little or no experience, willing to take less risks 
 - Corporate businesses companies, which want to expand their businesses
 
 ---
@@ -204,7 +205,7 @@ Deep Learning | 0.428654 | 0.654717 | 0.057082  | 0.503647 | 0.163133
 Gradient Boosting | 0.17661 | 0.42025 | 0.611507 | 0.282799 | 0.108599
 XGBoost | 0.408734 | 0.639323 | 0.100901 | 0.494821 | 0.159414
 
-^: Mean Absolute Error (MAE) and Root mean squared error (RMSE)
+^ Mean Squared Error (MSE) / Mean Absolute Error (MAE) / Root Mean Squared Error (RMSE)
 
 ---
 

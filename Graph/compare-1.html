@@ -8,11 +8,11 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Method', 'MSE', 'RMSE', 'r2', 'mean_residual_deviance', 'mae', 'rmsle'],
-          ['Random Forest', 0.099864, 0.316013, 0.780328, 0.099864, 0.230048, 0.083253],
-          ['Deep Learning', 0.428654, 0.654717, 0.057082, 0.428654, 0.503647, 0.163133],
-          ['Gradient Boosting', 0.17661, 0.42025, 0.611507, 0.17661, 0.282799, 0.108599],
-          ['XGBoost', 0.408734, 0.639323, 0.100901, 0.408734, 0.494821, 0.159414]
+          ['Method', 'MSE', 'RMSE', 'r2', 'mae', 'rmsle'],
+          ['Random Forest', 0.099864, 0.316013, 0.780328, 0.230048, 0.083253],
+          ['Deep Learning', 0.428654, 0.654717, 0.057082, 0.503647, 0.163133],
+          ['Gradient Boosting', 0.17661, 0.42025, 0.611507, 0.282799, 0.108599],
+          ['XGBoost', 0.408734, 0.639323, 0.100901, 0.494821, 0.159414]
         ]);
 
         var formatter = new google.visualization.NumberFormat({
@@ -23,7 +23,6 @@
         formatter.format(data, 3);
         formatter.format(data, 4);
         formatter.format(data, 5);
-        formatter.format(data, 6);
 
         var options = {
           chart: {
