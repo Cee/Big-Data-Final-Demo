@@ -150,7 +150,7 @@ slidenumbers: true
 
 # Top 10 Categories For Each State
 
-[Chart](./Graph/top-10-categories-Arizona.html)
+[Chart](Graph/top-10-categories-Arizona.html)
 
 ---
 
@@ -171,7 +171,7 @@ Polish | 4.19209245
 
 # Top 10 Cities For Chinese Restaurant
 
-[Chart](./Graph/top-10-cities-for-chinese-restaurant.html)
+[Chart](Graph/top-10-cities-for-chinese-restaurant.html)
 
 ---
 
@@ -192,8 +192,8 @@ Montreal | 3.465306657
 
 # Compare Machine Learning Methods
 
-- [Chart (Group By Method)](./Graph/compare-1.html)
-- [Chart (Group By Norm)](./Graph/compare-2.html)
+- [Chart (Group By Method)](Graph/compare-1.html)
+- [Chart (Group By Norm)](Graph/compare-2.html)
 
 ---
 
