@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['map'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Lat', 'Long', 'Name'],
+          [40.58086784, -79.96787628, 4.505034676], 
+          [40.45058945, -79.94779984, 3.763362393], 
+          [40.40169243, -79.98662125, 2.82598614], 
+          [40.50491615, -79.84231079, 4.193241377], 
+          [40.52941978, -79.82238525, 4.13273994], 
+          [40.58066582, -79.982173, 4.375767517], 
+          [40.43437424, -80.04482437, 4.111687226], 
+          [40.38809441, -80.00138367, 4.373784394], 
+          [40.40334869, -79.80644058, 4.077957993], 
+          [40.59245689, -80.03174149, 4.155765901], 
+          [40.5477742, -79.95699326, 3.781827807], 
+          [40.3231459, -79.73013123, 4.144460571], 
+          [40.44295708, -79.90212585, 2.739475996], 
+          [40.44473457, -79.98732758, 3.222665143], 
+          [40.54796066, -79.80494278, 4.066682773], 
+          [40.33876343, -79.84385193, 3.47992743], 
+          [40.50610336, -79.99850159, 3.403362675], 
+          [40.49517776, -80.00071564, 2.916281404], 
+          [40.43903557, -79.79106888, 4.083773208], 
+          [40.34159653, -79.74874847, 3.631689882]
+        ]);
+
+        var options = {
+          width: 1200,
+          enableScrollWheel: true,
+          mapType: "normal",
+          icons: {
+            default: {
+              normal: 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Ball-Azure-icon.png',
+              selected: 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Ball-Right-Azure-icon.png'
+            }
+          },
+          showTooltip: true,
+          showInfoWindow: true
+        };
+
+        var map = new google.visualization.Map(document.getElementById('main'));
+        map.draw(data, options);
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <div id="main" style="width: 1200px; height: 675px;"></div>
+  </body>
+</html>

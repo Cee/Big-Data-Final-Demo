@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "cells": [
+    {
+      "type": "cs",
+      "input": "assist"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"/Users/superlatte/Downloads/dataset/business_chinese.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs://Users/superlatte/Downloads/dataset/business_chinese.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs://Users/superlatte/Downloads/dataset/business_chinese.csv\"]\n  destination_frame: \"business_chinese.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 62\n  single_quotes: false\n  column_names: [\"\",\"address\",\"business_id\",\"categories\",\"city\",\"is_open\",\"latitude\",\"longitude\",\"name\",\"neighborhood\",\"postal_code\",\"review_count\",\"stars\",\"state\",\"real_stars\",\"attributes_Alcohol\",\"attributes_BikeParking\",\"attributes_BusinessAcceptsCreditCards\",\"attributes_Caters\",\"attributes_GoodForKids\",\"attributes_HasTV\",\"attributes_NoiseLevel\",\"attributes_OutdoorSeating\",\"attributes_RestaurantsAttire\",\"attributes_RestaurantsDelivery\",\"attributes_RestaurantsGoodForGroups\",\"attributes_RestaurantsPriceRange2\",\"attributes_RestaurantsReservations\",\"attributes_RestaurantsTableService\",\"attributes_RestaurantsTakeOut\",\"attributes_WheelchairAccessible\",\"attributes_WiFi\",\"hours_Friday\",\"hours_Monday\",\"hours_Saturday\",\"hours_Sunday\",\"hours_Thursday\",\"hours_Tuesday\",\"hours_Wednesday\",\"attributes_Ambience_casual\",\"attributes_Ambience_classy\",\"attributes_Ambience_divey\",\"attributes_Ambience_hipster\",\"attributes_Ambience_intimate\",\"attributes_Ambience_romantic\",\"attributes_Ambience_touristy\",\"attributes_Ambience_trendy\",\"attributes_Ambience_upscale\",\"attributes_BusinessParking_garage\",\"attributes_BusinessParking_lot\",\"attributes_BusinessParking_street\",\"attributes_BusinessParking_valet\",\"attributes_BusinessParking_validated\",\"attributes_DietaryRestrictions_dairy-free\",\"attributes_DietaryRestrictions_gluten-free\",\"attributes_DietaryRestrictions_soy-free\",\"attributes_GoodForMeal_breakfast\",\"attributes_GoodForMeal_brunch\",\"attributes_GoodForMeal_dessert\",\"attributes_GoodForMeal_dinner\",\"attributes_GoodForMeal_latenight\",\"attributes_GoodForMeal_lunch\"]\n  column_types: [\"Numeric\",\"String\",\"String\",\"Enum\",\"Enum\",\"Enum\",\"Numeric\",\"Numeric\",\"String\",\"Enum\",\"Enum\",\"Numeric\",\"Numeric\",\"Enum\",\"Numeric\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Numeric\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 52560"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"business_chinese.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "assist buildModel, null, training_frame: \"business_chinese.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'drf', {\"model_id\":\"drf-db835f97-fc30-4afe-8c38-76dee4a749c1\",\"training_frame\":\"business_chinese.hex\",\"validation_frame\":\"business_chinese.hex\",\"nfolds\":\"5\",\"response_column\":\"real_stars\",\"ignored_columns\":[\"C1\",\"business_id\",\"categories\",\"is_open\",\"neighborhood\",\"stars\",\"attributes_WheelchairAccessible\",\"attributes_Ambience_divey\",\"attributes_DietaryRestrictions_dairy-free\",\"attributes_DietaryRestrictions_gluten-free\",\"attributes_DietaryRestrictions_soy-free\"],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":20,\"min_rows\":1,\"nbins\":20,\"seed\":-1,\"mtries\":-1,\"sample_rate\":0.6320000290870667,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"distribution\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"binomial_double_trees\":false,\"col_sample_rate_change_per_level\":1,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"drf-db835f97-fc30-4afe-8c38-76dee4a749c1\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'deeplearning', {\"model_id\":\"deeplearning-5edadc9d-7292-4432-9970-2b1738ca5677\",\"training_frame\":\"business_chinese.hex\",\"validation_frame\":\"business_chinese.hex\",\"nfolds\":\"5\",\"response_column\":\"real_stars\",\"ignored_columns\":[\"C1\",\"business_id\",\"categories\",\"is_open\",\"neighborhood\",\"stars\",\"attributes_WheelchairAccessible\",\"attributes_Ambience_divey\",\"attributes_DietaryRestrictions_dairy-free\",\"attributes_DietaryRestrictions_gluten-free\",\"attributes_DietaryRestrictions_soy-free\"],\"ignore_const_cols\":true,\"activation\":\"Rectifier\",\"hidden\":[200,200],\"epochs\":10,\"variable_importances\":true,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"checkpoint\":\"\",\"use_all_factor_levels\":true,\"standardize\":true,\"train_samples_per_iteration\":-2,\"adaptive_rate\":true,\"input_dropout_ratio\":0,\"l1\":0,\"l2\":0,\"loss\":\"Automatic\",\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"score_interval\":5,\"score_training_samples\":10000,\"score_validation_samples\":0,\"score_duty_cycle\":0.1,\"stopping_rounds\":5,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0,\"max_runtime_secs\":0,\"autoencoder\":false,\"categorical_encoding\":\"AUTO\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"pretrained_autoencoder\":\"\",\"target_ratio_comm_to_comp\":0.05,\"seed\":-1,\"rho\":0.99,\"epsilon\":1e-8,\"nesterov_accelerated_gradient\":true,\"max_w2\":3.4028235e+38,\"initial_weight_distribution\":\"UniformAdaptive\",\"regression_stop\":0.000001,\"diagnostics\":true,\"fast_mode\":true,\"force_load_balance\":true,\"single_node_mode\":false,\"shuffle_training_data\":false,\"missing_values_handling\":\"MeanImputation\",\"quiet_mode\":false,\"sparse\":false,\"col_major\":false,\"average_activation\":0,\"sparsity_beta\":0,\"max_categorical_features\":2147483647,\"reproducible\":false,\"export_weights_and_biases\":false,\"mini_batch_size\":1,\"elastic_averaging\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"deeplearning-5edadc9d-7292-4432-9970-2b1738ca5677\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'gbm', {\"model_id\":\"gbm-a6b9e53c-93e8-4020-aab6-1f8260b3674b\",\"training_frame\":\"business_chinese.hex\",\"validation_frame\":\"business_chinese.hex\",\"nfolds\":\"5\",\"response_column\":\"real_stars\",\"ignored_columns\":[\"C1\",\"business_id\",\"categories\",\"is_open\",\"neighborhood\",\"stars\",\"attributes_WheelchairAccessible\",\"attributes_Ambience_divey\",\"attributes_DietaryRestrictions_dairy-free\",\"attributes_DietaryRestrictions_gluten-free\",\"attributes_DietaryRestrictions_soy-free\"],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":5,\"min_rows\":10,\"nbins\":20,\"seed\":-1,\"learn_rate\":0.1,\"sample_rate\":1,\"col_sample_rate\":1,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"learn_rate_annealing\":1,\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"col_sample_rate_change_per_level\":1,\"max_abs_leafnode_pred\":1.7976931348623157e+308,\"pred_noise_bandwidth\":0,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"gbm-a6b9e53c-93e8-4020-aab6-1f8260b3674b\""
+    }
+  ]
+}
