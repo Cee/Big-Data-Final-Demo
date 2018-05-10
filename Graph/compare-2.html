@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Norm', 'Random Forest', 'Deep Learning', 'Gradient Boosting', 'XGBoost'],
+          ['MSE', 0.099864, 0.428654, 0.17661, 0.408734],
+          ['RMSE', 0.316013, 0.654717, 0.42025, 0.639323],
+          ['r2', 0.780328, 0.057082, 0.611507, 0.100901],
+          ['mean_residual_deviance', 0.099864, 0.428654, 0.17661, 0.408734],
+          ['mae', 0.230048, 0.503647, 0.282799, 0.494821],
+          ['rmsle', 0.083253, 0.163133, 0.108599, 0.159414]
+        ]);
+
+        var formatter = new google.visualization.NumberFormat({
+          fractionDigits: 5
+        });
+        formatter.format(data, 1);
+        formatter.format(data, 2);
+        formatter.format(data, 3);
+        formatter.format(data, 4);
+
+        var options = {
+          chart: {
+            title: 'Comparison between 4 different Machine Leanring Methods',
+            // subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            width: 1200,
+            legend: { position: 'none' }
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('main'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="main" style="width: 1200px; height: 675px;"></div>
+  </body>
+</html>

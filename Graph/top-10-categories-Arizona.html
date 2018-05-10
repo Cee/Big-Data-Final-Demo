@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+    			['Category', 'Rating'],
+    			["Shaved Ice", 4.408471787],
+    			["Gelato", 4.378077256],
+    			["Coffee Roasteries", 4.374378378],
+    			["Cupcakes", 4.345326146],
+    			["Street Vendors", 4.328106969],
+    			["Poke", 4.2968294],
+    			["Local Services", 4.22552278],
+    			["Lebanese", 4.224629437],
+    			["Internet Cafes", 4.19702228],
+    			["Polish", 4.19209245]
+        ]);
+       
+        var formatter = new google.visualization.NumberFormat({
+		      fractionDigits: 3
+		    });
+		    formatter.format(data, 1);
+
+        var options = {
+          title: 'Top 10 Categories in Arizona',
+          width: 1200,
+          legend: { position: 'none' },
+          chart: { title: 'Top 10 Categories in Arizona',
+                   subtitle: 'by average rating' },
+          bars: 'vertical', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Rating'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('main'));
+        chart.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="main" style="width: 1200px; height: 675px;"></div>
+  </body>
+</html>

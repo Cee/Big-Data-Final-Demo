@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+    			['City', 'Rating'],
+          ["Aurora", 3.782264274], 
+          ["Pickering", 3.73193294], 
+          ["Newmarket", 3.729253363], 
+          ["Stuttgart", 3.592544663], 
+          ["Gilbert", 3.560078808], 
+          ["Gastonia", 3.559007997], 
+          ["Edinburgh", 3.558972629], 
+          ["Huntersville", 3.54797137], 
+          ["Fort Mill", 3.47231295], 
+          ["Montreal", 3.465306657]
+        ]);
+       
+        var formatter = new google.visualization.NumberFormat({
+          fractionDigits: 3
+        });
+        formatter.format(data, 1);
+
+        var options = {
+          title: 'Top 10 Cities For Chinese Restaurant',
+          width: 1200,
+          legend: { position: 'none' },
+          chart: { title: 'Top 10 Cities For Chinese Restaurant',
+                   subtitle: 'by average rating' },
+          bars: 'vertical', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Rating'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('main'));
+        chart.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="main" style="width: 1200px; height: 675px;"></div>
+  </body>
+</html>
